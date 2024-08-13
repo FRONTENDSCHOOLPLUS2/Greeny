@@ -1,0 +1,62 @@
+@import '@styles/mixin';
+
+.calendar_wrapper {
+  background-color: var(--color-white);
+  padding: 1.2rem;
+  box-sizing: border-box;
+  box-shadow: 0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  width: 100%;
+  @include flex-vertical(1rem);
+  .calendar_head {
+    @include flex-horizontal(1rem);
+    padding: 0.5rem 0.5rem 1rem;
+    border-bottom: 1px solid var(--color-gray-50);
+    .calendar_tit {
+      @include flex-horizontal(0.6rem);
+      margin-right: auto;
+    }
+  }
+
+  .calendar_week {
+    @include flex-horizontal(0.6rem);
+    .weekItem {
+      text-align: center;
+      width: 14%;
+      font-size: 1.2rem;
+      color: var(--color-primary);
+      font-weight: var(--font-semibold);
+    }
+  }
+
+  .calendar_day {
+    transition: all 0.3s;
+    width: 100%;
+    display: grid;
+    gap: 0.6rem;
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+
+    .dayItem {
+      min-height: 4rem;
+      cursor: pointer;
+      padding: 1.2rem 0.5rem;
+      @include flex-vertical(0.2rem);
+      justify-content: start;
+      align-items: center;
+      box-sizing: border-box;
+    }
+    .dayItem.today {
+      p {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        padding: 0.5rem 0.8rem;
+        box-sizing: border-box;
+        margin-top: -0.5rem;
+        border-radius: 50%;
+      }
+    }
+  }
+}

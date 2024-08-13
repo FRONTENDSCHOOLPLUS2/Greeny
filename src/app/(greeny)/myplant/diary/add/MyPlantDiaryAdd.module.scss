@@ -1,0 +1,155 @@
+@import '@styles/mixin';
+
+.diaryAdd_wrapper {
+  @include flex-vertical();
+  align-items: center;
+  justify-content: center;
+
+  form {
+    width: 100%;
+    @include flex-vertical(3rem);
+    align-items: center;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: var(--font-bold);
+      color: var(--color-primary);
+    }
+
+    .file_container {
+      width: 100%;
+      @include flex-vertical(1rem);
+
+      .file_head {
+        @include flex-horizontal(0);
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+          text-align: left;
+          margin-right: auto;
+          margin-bottom: 0.5rem;
+          color: var(--color-black);
+          font-weight: var(--font-semibold);
+          font-size: 1.6rem;
+        }
+      }
+
+      .file_box {
+        @include flex-horizontal(1rem);
+
+        ul {
+          @include flex-horizontal(1rem);
+          li {
+            @include flex-horizontal(0);
+            align-items: center;
+            width: 10rem;
+            height: 10rem;
+            border-radius: 1rem;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: var(--color-gray-10);
+      }
+    }
+
+    .input_container {
+      width: 100%;
+      @include flex-vertical(0.5rem);
+
+      label {
+        margin-bottom: 0.5rem;
+        color: var(--color-black);
+        font-weight: var(--font-semibold);
+        font-size: 1.6rem;
+
+        span {
+          color: var(--color-error);
+        }
+      }
+
+      p {
+        color: var(--color-error);
+        font-weight: var(--font-semibold);
+      }
+
+      .sub_container {
+        @include flex-horizontal(1rem);
+        align-items: center;
+        input {
+          width: 70%;
+        }
+      }
+    }
+
+    .button {
+      width: 100%;
+      padding: 1rem 1.4rem;
+      box-sizing: border-box;
+      border-radius: 0.6rem;
+      text-align: center;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+
+  .photoAdd {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 1rem;
+    background-color: #d5e1de;
+    background-image: url('../../../../../../public/images/PhotoAddIcon.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 3.2rem;
+  }
+}
+
+.datePicker {
+  display: flex;
+  border: 0.1rem solid var(--color-gray-50);
+  border-radius: 4px;
+  background-color: var(--color-white);
+  box-sizing: border-box;
+  width: 100%;
+  height: 4rem;
+  color: var(--color-black);
+
+  &:focus {
+    border: 2px solid var(--color-primary);
+  }
+}
+
+.selectBox {
+  position: relative;
+  width: 100%;
+  height: 4rem;
+  border-radius: 0.4rem;
+  border: 0.1rem solid var(--color-gray-50);
+  box-sizing: border-box;
+  background-image: url('../../../../../../public/images/DropDown_nor.svg');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+
+  .select {
+    width: inherit;
+    height: inherit;
+    background: transparent;
+    border: 0 none;
+    outline: 0 none;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 3; // select가 위로 올라와야 함
+  }
+}

@@ -1,0 +1,75 @@
+@import '@styles/mixin';
+
+.plant_wrapper {
+  width: 100%;
+  @include flex-vertical(3rem);
+
+  .contents_head {
+    @include flex-horizontal(0);
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: var(--font-semibold);
+      color: var(--color-primary);
+    }
+
+    .btn_box {
+      @include flex-horizontal(1rem);
+
+      .button_line,
+      .button_fill {
+        width: 5rem;
+        height: 3rem;
+        background-image: url('../../../../public/images/DeleteIcon.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 0.1rem solid var(--color-primary);
+        border-radius: 0.8rem;
+      }
+
+      .button_fill {
+        background-image: url('../../../../public/images/PlantAddIcon.svg');
+        background-color: var(--color-primary);
+      }
+    }
+  }
+
+  .contents_main {
+    @include flex-vertical(3rem);
+
+    .contents_item {
+      @include flex-horizontal(1.8rem);
+      .item_cover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10rem;
+        height: 10rem;
+        overflow: hidden;
+        border-radius: 1rem;
+      }
+
+      .item_info {
+        @include flex-vertical(1rem);
+        padding: 0.4rem 0;
+        box-sizing: border-box;
+
+        h3 {
+          font-size: 1.6rem;
+          font-weight: var(--font-semibold);
+        }
+
+        span {
+          margin-top: auto;
+          background-color: var(--color-secondary-dark);
+          padding: 0.4rem;
+          text-align: center;
+          color: var(--color-primary);
+          border-radius: 2rem;
+        }
+      }
+    }
+  }
+}

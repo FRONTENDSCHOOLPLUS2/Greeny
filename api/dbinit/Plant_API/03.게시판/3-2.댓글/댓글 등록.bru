@@ -1,0 +1,21 @@
+meta {
+  name: 댓글 등록
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/posts/34/replies
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+      "content": "어쩔방구"
+  }
+}

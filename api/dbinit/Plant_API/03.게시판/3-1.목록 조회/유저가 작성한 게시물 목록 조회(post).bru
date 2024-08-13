@@ -1,0 +1,19 @@
+meta {
+  name: 유저가 작성한 게시물 목록 조회(post)
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/posts/users/1?type=post
+  body: none
+  auth: bearer
+}
+
+params:query {
+  type: post
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}

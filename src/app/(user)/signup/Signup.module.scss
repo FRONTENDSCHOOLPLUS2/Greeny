@@ -1,0 +1,73 @@
+@import '@styles/mixin';
+
+.signup_wrapper {
+  form {
+    width: 100%;
+    @include flex-vertical(3rem);
+    align-items: center;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: var(--font-bold);
+      color: var(--color-primary);
+    }
+
+    .file_container {
+      width: 100%;
+      @include flex-vertical(0.5rem);
+      align-items: center;
+
+      h3 {
+        text-align: left;
+        margin-right: auto;
+        margin-bottom: 0.5rem;
+        color: var(--color-black);
+        font-weight: var(--font-semibold);
+        font-size: 1.6rem;
+      }
+    }
+
+    .input_container {
+      width: 100%;
+      @include flex-vertical(0.5rem);
+
+      label {
+        margin-bottom: 0.5rem;
+        color: var(--color-black);
+        font-weight: var(--font-semibold);
+        font-size: 1.6rem;
+
+        span {
+          color: var(--color-error);
+        }
+      }
+
+      p {
+        color: var(--color-error);
+        font-weight: var(--font-semibold);
+      }
+    }
+
+    .button {
+      width: 100%;
+      padding: 1rem 1.4rem;
+      box-sizing: border-box;
+      border-radius: 0.6rem;
+      text-align: center;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+
+  .photoAdd {
+    display: inline-block;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    background-color: #d5e1de;
+    background-image: url('../../../../public/images/PhotoAddIcon.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 3.2rem;
+  }
+}

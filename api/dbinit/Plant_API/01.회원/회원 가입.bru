@@ -1,0 +1,22 @@
+meta {
+  name: 회원 가입
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/users
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "plant1@greeny.com",
+    "password": "11111111",
+    "name": "Greeny",
+    "phone": "0118889999",
+    "address": "서울시 강남구 역삼동 123",
+    "type": "seller"
+  }
+}

@@ -1,0 +1,19 @@
+.search_container {
+  margin-bottom: 2rem;
+}
+
+.post_list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.item {
+  overflow: hidden;
+  border: 0.1rem solid var(--color-gray-50);
+  border-radius: 1rem;
+}
+
+.info {
+  padding: 1.4rem 1.2rem;
+}

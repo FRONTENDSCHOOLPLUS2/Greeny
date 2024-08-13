@@ -1,0 +1,85 @@
+@import '@styles/mixin';
+
+.login_wrapper {
+  width: 100%;
+  @include flex-vertical(5rem);
+  align-items: center;
+  justify-content: center;
+
+  form {
+    width: 100%;
+    @include flex-vertical(3rem);
+    align-items: center;
+
+    .input_container {
+      width: 100%;
+      @include flex-vertical(0.5rem);
+
+      label {
+        margin-bottom: 0.5rem;
+        color: var(--color-primary);
+        font-weight: var(--font-semibold);
+        font-size: 1.6rem;
+      }
+
+      p {
+        color: var(--color-error);
+        font-weight: var(--font-semibold);
+      }
+    }
+
+    .signupText {
+      color: var(--color-black);
+      a {
+        color: var(--color-black);
+        text-decoration: underline;
+        font-weight: var(--font-semibold);
+      }
+    }
+
+    .button {
+      width: 100%;
+      padding: 1rem 1.4rem;
+      box-sizing: border-box;
+      border-radius: 0.6rem;
+      text-align: center;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+
+  .socail {
+    width: 100%;
+    @include flex-vertical(2rem);
+    align-items: center;
+
+    p {
+      @include flex-horizontal(1rem);
+      justify-content: center;
+      align-items: center;
+    }
+
+    p::after,
+    p::before {
+      content: '';
+      display: block;
+      height: 0.1rem;
+      width: 8.6rem;
+      background-color: var(--color-gray-30);
+    }
+
+    .socail_list {
+      @include flex-horizontal(1rem);
+    }
+  }
+}
+.login_wrapper:after {
+  content: '';
+  display: block;
+  position: absolute;
+  inset: 0;
+  background-image: url('../../../../public/images/LoginBackground.png');
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: -1;
+}

@@ -1,0 +1,79 @@
+@import '@styles/mixin';
+
+.main_wrapper {
+  @include flex-vertical(2rem);
+  max-width: 36rem;
+  border: 1px solid;
+  margin: 0 auto;
+
+  .image_wrapper {
+    position: relative;
+    width: 100%;
+    height: 30rem;
+    .img {
+      object-fit: cover;
+    }
+  }
+
+  .content_wrapper {
+    @include flex-vertical(3rem);
+    justify-content: space-between;
+    padding: 0 2rem;
+
+    .title {
+      @include flex-vertical(1rem);
+      justify-content: space-between;
+      align-items: flex-start;
+      // width: 31.2rem;
+      height: 5.3rem;
+
+      p {
+        font-weight: var(--font-bold);
+        font-size: 2rem;
+      }
+      span {
+        color: #777;
+      }
+    }
+
+    .detail {
+      // .list {
+      //   .item_container {
+      //     @include flex-horizontal(1rem);
+      //     justify-content: space-between;
+      //     align-items: center;
+      //     height: 1.9rem;
+
+      //     .item_title {
+      //       font-weight: var(--font-medium);
+      //       font-size: 1.6rem;
+      //     }
+      //     .item_content {
+      //       font-weight: var(--font-regular);
+      //       font-size: 1.2rem;
+      //     }
+      //   }
+      // }
+      // table {
+      //   border-spacing: 0 2.4rem;
+      // }
+      tbody > tr:last-child {
+        margin-bottom: 0;
+      }
+      tbody > tr {
+        display: block;
+        margin-bottom: 2.4rem;
+        th {
+          width: 7rem;
+          text-align: left;
+          font-weight: var(--font-medium);
+          font-size: 1.6rem;
+        }
+        td {
+          font-weight: var(--font-regular);
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

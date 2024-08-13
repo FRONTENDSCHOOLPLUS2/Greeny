@@ -1,0 +1,16 @@
+meta {
+  name: 게시물 목록 조회(키워드 검색)
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/posts?type=post
+  body: none
+  auth: none
+}
+
+params:query {
+  type: post
+  ~type: qna
+}

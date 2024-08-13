@@ -1,0 +1,35 @@
+meta {
+  name: 식물 등록
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/seller/products
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "name":"칼라디움",
+    "content": "베리베리",
+    "grwhTp": "16~20℃",
+    "waterCycle": 3,
+    "adoptionDate": "2024-07-27",
+    "light":"낮은 광도(300~800 Lux)",
+    "mainImages": [
+    {
+        "path": "/files/03-Greeny/PlantImg1.png",
+        "name": "PlantImg1.png"
+    }
+  ],
+    "price": 999,
+    "shippingFees": 999,
+    "quantity": 999
+  }
+}

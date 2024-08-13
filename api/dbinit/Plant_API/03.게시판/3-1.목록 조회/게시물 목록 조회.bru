@@ -1,0 +1,16 @@
+meta {
+  name: 게시물 목록 조회
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/posts?type=diary
+  body: none
+  auth: none
+}
+
+params:query {
+  type: diary
+  ~type: post
+}

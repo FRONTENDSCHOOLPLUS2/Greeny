@@ -1,0 +1,58 @@
+@import '../../../../styles/mixin';
+
+.main_wrapper {
+  @include flex-vertical(1rem);
+  max-width: 36rem;
+  border: 1px solid;
+  margin: 0 auto;
+  height: 100vh;
+
+  .main_search {
+    @include flex-horizontal(2rem);
+    justify-content: space-between;
+    padding: 1rem;
+
+    input {
+      flex-grow: 1;
+    }
+  }
+
+  .follow_list {
+    @include flex-vertical();
+    li + li {
+      margin-top: -0.1rem;
+    }
+  }
+}
+
+.item_wrapper {
+  padding: 1rem 2rem;
+  border-top: 1px solid var(--color-gray-50);
+  border-bottom: 1px solid var(--color-gray-50);
+
+  .user_info_wrapper {
+    @include flex-horizontal(1rem);
+    justify-content: space-between;
+    align-items: center;
+
+    .thumbnail_wrapper {
+      @include flex-horizontal(2rem);
+      justify-content: space-between;
+      img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background-color: #d5e1de;
+      }
+      .user_data {
+        @include flex-vertical(1rem);
+        justify-content: space-between;
+        align-items: flex-start;
+        p {
+          font-weight: var(--font-semibold);
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

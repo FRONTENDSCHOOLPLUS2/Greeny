@@ -1,0 +1,23 @@
+.info {
+  padding: 1.4rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 0.1rem solid var(--color-gray-50);
+}
+
+.image {
+  margin-bottom: 2rem;
+}
+
+.text {
+  font-size: 1.2rem;
+
+  .plant_info {
+    padding-bottom: 2rem;
+    color: var(--color-gray-10);
+    border-bottom: 0.1rem solid var(--color-gray-50);
+  }
+
+  .description {
+    padding-top: 2rem;
+  }
+}

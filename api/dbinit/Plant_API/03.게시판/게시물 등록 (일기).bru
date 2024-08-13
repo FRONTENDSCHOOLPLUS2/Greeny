@@ -1,0 +1,27 @@
+meta {
+  name: 게시물 등록 (일기)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/posts
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+          "type": "diary",
+          "product_id": 11,
+          "plantState": "좋음",
+          "action": "물주기",
+          "actionDate": "2024-08-21",
+          "title": "우리 개굴이이이~",
+          "content": "테스트지롱"
+  }
+}

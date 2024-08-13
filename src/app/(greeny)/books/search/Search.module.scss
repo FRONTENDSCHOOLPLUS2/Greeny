@@ -1,0 +1,154 @@
+@import '@styles/mixin';
+
+.modal_wrapper {
+  @include flex-vertical(3rem);
+  justify-content: space-between;
+  // background: var(--color-white);
+  background: #eee;
+  border-radius: 2rem;
+  padding: 3rem 2rem 2rem;
+  width: 30rem;
+  height: 40rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 0 auto;
+  &::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: 1rem;
+  }
+  .plant_type {
+    @include flex-vertical(1rem);
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 8.5rem;
+    p {
+      font-weight: var(--font-semibold);
+      font-size: 1.4rem;
+    }
+    .label_wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      place-items: start start;
+    }
+  }
+  .plant_props_wrapper {
+    .plant_props {
+      @include flex-vertical(2rem);
+      justify-content: space-between;
+      align-items: flex-start;
+      p {
+        font-weight: var(--font-semibold);
+        font-size: 1.4rem;
+      }
+      .flower_color {
+        @include flex-vertical(1rem);
+        justify-content: space-between;
+        align-items: flex-start;
+        p {
+          font-weight: var(--font-semibold);
+          font-size: 1.4rem;
+        }
+        .label_wrapper {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1rem;
+          place-items: start start;
+          font-weight: var(--font-reqular);
+          font-size: 1.2rem;
+        }
+      }
+      .fruit_color {
+        @include flex-vertical(1rem);
+        justify-content: space-between;
+        align-items: flex-start;
+        p {
+          font-weight: var(--font-semibold);
+          font-size: 1.4rem;
+        }
+        .label_wrapper {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1rem;
+          place-items: start start;
+          font-weight: var(--font-reqular);
+          font-size: 1.2rem;
+        }
+      }
+      .leaf_pattern {
+        @include flex-vertical(1rem);
+        justify-content: space-between;
+        align-items: flex-start;
+        p {
+          font-weight: var(--font-semibold);
+          font-size: 1.4rem;
+        }
+        .label_wrapper {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1rem;
+          place-items: start start;
+          font-weight: var(--font-reqular);
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+  .light_quantity {
+    @include flex-vertical(1rem);
+    justify-content: space-between;
+    align-items: flex-start;
+    // height: 5.3rem;
+    p {
+      font-weight: var(--font-semibold);
+      font-size: 1.4rem;
+    }
+    .label_wrapper {
+      @include flex-horizontal(1rem);
+      justify-content: space-around;
+      align-items: center;
+      height: 1.6rem;
+    }
+  }
+  .water_frequency {
+    @include flex-vertical(2rem);
+    justify-content: space-between;
+    height: 1.49rem;
+    p {
+      font-weight: var(--font-semibold);
+      font-size: 1.4rem;
+    }
+    .label_wrapper {
+      @include flex-vertical(1rem);
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+}
+.custom_checkbox {
+  @include flex-horizontal(1rem);
+  & > input {
+    margin: 0;
+    appearance: none;
+    cursor: pointer;
+    // width, height 1.6rem 시 4글자 이상이 두 줄로 바뀜
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.35rem;
+    background-image: url('/images/CheckBox_nor.svg');
+    background-size: 100% 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+
+    &:checked {
+      background-image: url('/images/CheckBox_sel.svg');
+    }
+    & + span {
+      cursor: pointer;
+    }
+  }
+}

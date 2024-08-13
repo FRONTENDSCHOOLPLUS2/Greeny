@@ -1,0 +1,44 @@
+@import '@styles/mixin';
+
+.layout_wrapper {
+  @include flex-horizontal(0);
+  z-index: 10;
+  position: fixed;
+  height: 6rem;
+  max-width: 36rem;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+  box-shadow: 0 -0.2rem 0.3rem 0 rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  background-color: var(--color-secondary-dark);
+  align-items: center;
+  justify-content: center;
+
+  .nav {
+    width: 100%;
+    @include flex-horizontal(0);
+
+    li {
+      box-sizing: border-box;
+      width: 20%;
+    }
+    .nav_item {
+      @include flex-vertical(0.6rem);
+      align-items: center;
+      font-size: 1rem;
+      text-align: center;
+      p {
+        color: var(--color-gray-10);
+      }
+
+      p.is_active {
+        color: var(--color-primary) !important;
+        font-weight: var(--font-semibold);
+      }
+    }
+  }
+}
