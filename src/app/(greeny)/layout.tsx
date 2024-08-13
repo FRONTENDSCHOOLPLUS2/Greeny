@@ -7,6 +7,7 @@ import '@/styles/reset.css';
 import '@/styles/common.css';
 import '@/styles/variable.css';
 import RecoilRootWrapper from '@/RecoilWrapper';
+import QueryProvider from '@/QueryProvider';
 
 const pretendard = localFont({
   src: '../../../public/fonts/PretendardVariable.woff2',
@@ -35,9 +36,11 @@ export default function RootLayout({
       <body>
         <div className={styles.root}>
           <RecoilRootWrapper>
-            <Header />
-            <main className={styles.main}>{children}</main>
-            <Footer />
+            <QueryProvider>
+              <Header />
+              <main className={styles.main}>{children}</main>
+              <Footer />
+            </QueryProvider>
           </RecoilRootWrapper>
         </div>
       </body>

@@ -81,7 +81,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3rem;
-    // overflow: hidden;
+    gap: 3rem;
 
     .title {
       margin-bottom: 0.4rem;
@@ -113,6 +113,10 @@
       flex-shrink: 0;
       border-radius: 1rem;
       overflow: hidden;
+
+      img {
+        vertical-align: top;
+      }
     }
   }
 
@@ -145,7 +149,6 @@
   }
 
   .number {
-    // margin-right: 10px;
     color: var(--color-primary);
     font-size: 1rem;
   }
@@ -214,12 +217,13 @@
     align-items: center;
     color: var(--color-black);
 
-    .profileImage {
+    .profile_image {
       width: 3.2rem;
       height: 3.2rem;
       margin-right: 1rem;
       border-radius: 100%;
       overflow: hidden;
+      border: 1px solid var(--color-gray-50);
     }
 
     .name {
@@ -251,20 +255,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 0 0.7rem 0.9rem;
+  padding: 0.8rem 0 0.7rem 0.8rem;
   border: 0.12rem solid var(--color-gray-50);
   border: {
     left: none;
     right: none;
   }
+  color: var(--color-gray-10);
+  font: {
+    size: 1rem;
+    weight: var(--font-regular);
+  }
 
   .time_and_views {
     text-align: right;
-    color: var(--color-gray-10);
-    font: {
-      size: 1rem;
-      weight: var(--font-regular);
-    }
     :first-child {
       margin-bottom: 0.3rem;
     }
@@ -281,6 +285,7 @@
   margin-left: 4.2rem;
 
   .reply_item_content {
+    white-space: pre-wrap;
     padding: 1.4rem 1rem;
     border-radius: 1rem;
     background-color: var(--color-secondary-dark);
@@ -300,15 +305,19 @@
 .reply_form {
   position: fixed;
   width: 31rem;
-  bottom: 0;
+  bottom: 6rem;
   padding: 1rem 0 1.5rem;
   background-color: white;
   display: flex;
   gap: 1.2rem;
   font-size: 1.2rem;
 
-  input {
-    padding: 18px 8px;
+  textarea {
+    padding: 13px 18px;
+  }
+  textarea:focus {
+    border-width: 0.1rem;
+    box-shadow: 0 0 0 0.1rem var(--color-primary);
   }
 
   .btn_submit {
@@ -367,7 +376,6 @@
     top: 50%;
     right: 1.2rem;
     transform: translateY(-50%);
-    cursor: pointer;
 
     img {
       vertical-align: top;
@@ -378,10 +386,18 @@
     padding: 1.1rem;
     border-radius: 1rem;
     background-color: var(--color-primary);
-    cursor: pointer;
 
     img {
       vertical-align: top;
     }
+  }
+}
+
+// SubMenu
+.sub_menu {
+  display: block;
+  height: 1.4rem;
+  .sub_menu_icon {
+    vertical-align: top;
   }
 }

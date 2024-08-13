@@ -4,41 +4,33 @@ import styles from './Community.module.scss';
 import PostItem from '@greeny/story/PostItem';
 import { CoreErrorRes, MultiItem } from '@/types/response';
 import { PostRes } from '@/types/post';
-import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { useQuery } from '@tanstack/react-query';
+
+async function getPosts(category: string | null) {
+  const url = 'https://api.fesp.shop/posts' + (category ? `?custom={"extra":{"category":"${category}"}}` : '');
+
+  try {
+    const res = await fetch(url, { headers: { 'client-id': '03-Greeny' } });
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    if (error instanceof Error) {
+      if (error.name === 'AbortError') {
+        return console.log('이전 요청이 취소되었습니다.');
+      }
+      alert('네트워크 에러. 잠시 후 다시 시도해주세요.');
+    }
+  }
+}
 
 export default function PostList() {
-  const [data, setData] = useState<MultiItem<PostRes> | CoreErrorRes>();
-  const [isLoading, setIsLoading] = useState<boolean>(true);
   const searchParams = useSearchParams();
   const category = searchParams.get('category');
-
-  useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-
-    (async function fetchPosts() {
-      const url = 'https://api.fesp.shop/posts' + (category ? `?custom={"extra":{"category":"${category}"}}` : '');
-
-      try {
-        const res = await fetch(url, { headers: { 'client-id': '03-Greeny' }, signal });
-        setData(await res.json());
-      } catch (e) {
-        if (e instanceof Error) {
-          if (e.name === 'AbortError') {
-            console.log('이전 요청 취소됨');
-            return;
-          }
-          // TODO: error UI 만들기(ex. 재시도 UI)
-          alert('네트워크 에러. 잠시 후 다시 시도해 주세요.');
-        }
-      } finally {
-        setIsLoading(false);
-      }
-    })();
-
-    return () => controller.abort();
-  }, [category]);
+  const { data, isLoading } = useQuery<MultiItem<PostRes> | CoreErrorRes>({
+    queryKey: ['post', category],
+    queryFn: () => getPosts(category),
+  });
 
   if (isLoading) return <p>loading...</p>;
 

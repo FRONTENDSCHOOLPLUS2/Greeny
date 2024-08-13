@@ -3,12 +3,13 @@ import Image from 'next/image';
 import IconAndNumber from '@greeny/story/IconAndNumber';
 import Link from 'next/link';
 import { PostRes } from '@/types/post';
+import { formatAgo } from '@/utils/date';
 
 type Props = {
   item: PostRes;
 };
 
-export default function PostItem({ item: { _id, title, content, views, repliesCount } }: Props) {
+export default function PostItem({ item: { _id, title, content, views, repliesCount, createdAt, image } }: Props) {
   return (
     <li>
       <article className={styles.post_item_container}>
@@ -17,11 +18,7 @@ export default function PostItem({ item: { _id, title, content, views, repliesCo
             <h3 className={styles.title}>{title}</h3>
             <p className={styles.description}>{content}</p>
           </div>
-          <div className={styles.thumbnail}>
-            {/* 이미지 예시 */}
-            <div style={{ width: 50, height: 50, backgroundColor: '#DDDDDD' }}></div>
-            {/* {image && <Image src={image.path} width={50} height={50} alt={image.name} />} */}
-          </div>
+          <div className={styles.thumbnail}>{image?.length > 0 && <Image src={'https://api.fesp.shop' + image[0].path} width={50} height={50} alt={image[0].name} />}</div>
         </Link>
         <div className={styles.info}>
           <div className={styles.icons}>
@@ -29,7 +26,7 @@ export default function PostItem({ item: { _id, title, content, views, repliesCo
             <IconAndNumber src="/images/CommentIcon.svg" alt="코멘트" number={repliesCount!} />
             <IconAndNumber src="/images/ViewIcon.svg" alt="조회수" number={views} />
           </div>
-          <p>몇분 전</p>
+          <p>{formatAgo(createdAt)}</p>
         </div>
       </article>
     </li>

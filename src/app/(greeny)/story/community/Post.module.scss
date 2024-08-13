@@ -109,6 +109,10 @@
       padding: 1rem 0;
       border-bottom: 0.1rem solid var(--color-gray-50);
     }
+
+    pre {
+      white-space: pre-wrap;
+    }
   }
 }
 
