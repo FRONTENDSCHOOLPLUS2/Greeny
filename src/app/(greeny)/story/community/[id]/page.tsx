@@ -55,7 +55,7 @@ export default function PostDetail({ params: { id } }: { params: { id: string } 
         </section>
         <section className={styles.reply}>
           <ReplyList postId={id} />
-          <ReplyInput postId={id} />
+          <ReplyInput />
         </section>
       </article>
     )

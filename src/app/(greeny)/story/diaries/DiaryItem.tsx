@@ -12,7 +12,7 @@ export default function DiaryItem() {
       </Link>
       {/* 프로필, 올린 시간, 좋아요 */}
       <div className={diary.info}>
-        <UserProfile
+        {/* <UserProfile
           fontStyle="md_semibold"
           component={
             <>
@@ -22,7 +22,7 @@ export default function DiaryItem() {
               </div>
             </>
           }
-        />
+        /> */}
       </div>
     </div>
   );
