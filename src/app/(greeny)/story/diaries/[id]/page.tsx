@@ -6,7 +6,7 @@ export default function DiaryDetail() {
   return (
     <>
       <div className={diaryDetail.info}>
-        <UserProfile
+        {/* <UserProfile
           fontStyle="md_semibold"
           component={
             <>
@@ -16,7 +16,7 @@ export default function DiaryDetail() {
               </div>
             </>
           }
-        />
+        /> */}
       </div>
       {/* 구분선 */}
       <article>

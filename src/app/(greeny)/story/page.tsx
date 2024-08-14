@@ -1,7 +1,7 @@
 import styles from './Community.module.scss';
-import CommunitySection from '@greeny/story/CommunitySection';
-import PostList from '@greeny/story/PostList';
-import DiarySlider from '@greeny/story/DiarySlider';
+import CommunitySection from './CommunitySection';
+import DiarySlider from './DiarySlider';
+import PostList from './PostList';
 
 export default async function Community() {
   return (
